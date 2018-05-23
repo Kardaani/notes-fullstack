@@ -59,7 +59,7 @@ export default class IndexItem extends Component {
           <div className="panel panel-default">
             <div className="panel-heading">List of Notes</div>
             <div className="panel-body">
-            <p>Click on the task description to edit</p>
+            <p>Click on the note description to edit</p>
               <table id="todo-list" className="table table-bordered">
                 <tbody>
                   {this.tabRow()}

@@ -3,7 +3,7 @@ import axios from 'axios';
 export default class NoteService {
 
   get(id,callback) {
-    axios.get('http://localhost:6200/note/'+id)
+    axios.get('http://localhost:6200/notes/'+id)
     .then((response) => {
       callback(response.data);
     })
@@ -44,7 +44,7 @@ export default class NoteService {
   }
 
   update(data, id, callback){
-    axios.post('http://localhost:6200/note/update/'+id, {
+    axios.post('http://localhost:6200/notes/update/'+id, {
       desc: data
     })
     .then(function(response) {
@@ -57,7 +57,7 @@ export default class NoteService {
   }
 
   delete(id, callback){
-    axios.get('http://localhost:6200/note/delete/'+id)
+    axios.get('http://localhost:6200/notes/delete/'+id)
     .then(function(response){
       callback();
     })
