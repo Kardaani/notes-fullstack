@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NoteService from './NoteService';
 import axios from 'axios';
-import OneNote from './OneNote';
+import ViewNote from './ViewNote';
 
 export default class ShowNotes extends Component {
 
@@ -30,12 +30,18 @@ export default class ShowNotes extends Component {
 
         var thisRef = this;
         return this.state.items.map(function(object, i){
-            return <OneNote onDelete={thisRef.onDelete} onUpdate={thisRef.onUpdate} obj={object} key={i} />;
+            return <ViewNote onView={thisRef.onView}  obj={object} key={i} />;
         })
       }
     }
 
-
+    onView(event) {
+      let id =this.props.match.params.id;
+      var thisRef = this;
+      this.noteService.show(id, function(data){
+        thisRef.setState(data);
+      });
+    }
 
     handleIndex() {
       this.props.history.push('/');
