@@ -8,7 +8,7 @@ var Notes = new Schema({
   },
 
 },{
-    collection: 'Tasks'
+    collection: 'Notes'
 });
 
 module.exports = mongoose.model('Notes', Notes);

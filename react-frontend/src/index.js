@@ -7,9 +7,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import {Header} from "./components/Header";
 
 import AddNote from './components/AddNote';
-import AllNotes from './components/AllNotes';
+import ShowNotes from './components/ShowNotes';
+import ShowNote from './components/ShowNote';
 import UpdateNote from './components/UpdateNote';
-
+import indexNotes from './components/indexNotes'
+import EditNotes from './components/EditNotes';
 import './index.css';
 
 ReactDOM.render(
@@ -23,7 +25,10 @@ ReactDOM.render(
       <Router>
       <div>
       <Route path='/add' component={AddNote} />
-      <Route exact path='/' component={AllNotes} />
+      <Route path='/editnotes' component={EditNotes} />
+      <Route path='/shownotes' component={ShowNotes} />
+      <Route path='/shownote' component={ShowNote} />
+      <Route exact path='/' component={indexNotes} />
       <Route path='/update/:id' component={UpdateNote} />
       </div>
       </Router>

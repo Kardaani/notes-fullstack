@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
-export default class OneNote extends Component {
+export default class DeleteNote extends Component {
+
+  constructor(props) {
+      super(props);
+  }
 
   render() {
     return (
         <tr>
           <td>
-            <button id={this.props.obj._id} onClick={this.props.onDelete} type="button" value="Show" className="btn btn-danger btn-xs">Show</button>
+            <button id={this.props.obj._id} onClick={this.props.onDelete} type="button" value="Delete" className="btn btn-danger btn-xs">Delete</button>
             <a id={this.props.obj._id} onClick={this.props.onUpdate} href="">{this.props.obj.desc}</a>
           </td>
         </tr>
     );
   }
-
 }

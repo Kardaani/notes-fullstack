@@ -3,7 +3,7 @@ import NoteService from './NoteService';
 import axios from 'axios';
 import OneNote from './OneNote';
 
-export default class IndexItem extends Component {
+export default class ShowNotes extends Component {
 
   constructor(props) {
       super(props);
@@ -11,9 +11,8 @@ export default class IndexItem extends Component {
       this.noteService = new NoteService();
 
       //bind
-      this.onDelete = this.onDelete.bind(this);
-      this.onUpdate = this.onUpdate.bind(this);
-      this.handleAdd = this.handleAdd.bind(this);
+
+      this.handleIndex = this.handleIndex.bind(this);
     }
     componentWillMount(){
       this.fillData();
@@ -36,21 +35,10 @@ export default class IndexItem extends Component {
       }
     }
 
-    onDelete(event) {
-      let id = event.target.id;
-      var thisRef = this;
-      this.noteService.delete(id,()=>{
-        thisRef.fillData();
-      });
-    }
 
-    onUpdate(event) {
-      let id = event.target.id;
-      this.props.history.push('/update/'+id);
-    }
 
-    handleAdd() {
-      this.props.history.push('/add');
+    handleIndex() {
+      this.props.history.push('/');
     }
 
     render() {
@@ -59,15 +47,16 @@ export default class IndexItem extends Component {
           <div className="panel panel-default">
             <div className="panel-heading">List of Notes</div>
             <div className="panel-body">
-            <p>Click on the note description to edit</p>
-              <table id="todo-list" className="table table-bordered">
+            <p>Click on the note description to view it!</p>
+              <table id="note-list" className="table table-bordered">
                 <tbody>
                   {this.tabRow()}
                 </tbody>
               </table>
             </div>
             <div className="panel-footer">
-              <button onClick={this.handleAdd} className="btn btn-info">New note</button>
+
+              <button onClick={this.handleIndex} className="btn btn-info">Back to Index</button>
             </div>
           </div>
         </div>
