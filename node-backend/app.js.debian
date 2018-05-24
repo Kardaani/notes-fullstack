@@ -5,13 +5,11 @@ var cors = require('cors');
 
 //server configuration
 var basePath = '/notes';
-var port = 6200;
+var port = 90;
 
 // Mongo Connection
 
-
-mongoose.connect('mongodb://karinotes:karinotes@ds161793.mlab.com:61793/heroku_f42rzdgv')
-//mongoose.connect('mongodb://karinotes:karinotes@ds231460.mlab.com:31460/karinotes')
+mongoose.connect('mongodb://karinotes:karinotes@ds231460.mlab.com:31460/karinotes')
 
 
 
