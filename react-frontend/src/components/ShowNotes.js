@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NoteService from './NoteService';
-//import axios from 'axios';
+
 import ViewNote from './ViewNote';
 
 export default class ShowNotes extends Component {

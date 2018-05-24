@@ -64,7 +64,7 @@ export default class EditNotes extends Component {
           <div className="panel panel-default">
             <div className="panel-heading">List of Notes</div>
             <div className="panel-body">
-            <p>Click on the note description to edit!</p>
+            <p>Click on the note description to edit or click Delete Button to delete it!</p>
               <table id="note-list" className="table table-bordered">
                 <tbody>
                   {this.tabRow()}

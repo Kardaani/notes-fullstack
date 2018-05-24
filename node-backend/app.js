@@ -7,12 +7,12 @@ var cors = require('cors');
 var basePath = '/notes';
 var port = 6200;
 
-// Connection to DB
+// Mongo Connection
 
 mongoose.connect('mongodb://karinotes:karinotes@ds231460.mlab.com:31460/karinotes')
 
 
-//mongoose.connect('mongodb://mongodb')
+
     .then(() => {
       console.log('Backend Started');
     })
@@ -21,10 +21,10 @@ mongoose.connect('mongodb://karinotes:karinotes@ds231460.mlab.com:31460/karinote
         process.exit(1);
     });
 
-// Routes and Backend Funcioncalities
+
 var notesRoutes = require('./src/routes/notesRoutes');
 
-// App Instance
+// Application
 var app = express();
 app.use(express.static('public'));
 app.use(cors());
@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(basePath, notesRoutes);
 
-// Execute App
+// Execute Application
 app.listen(port, () => {
-  console.log('Notes Backend running on Port: ',port);
+  console.log('Notes Node Backend running on Port: ',port);
 });

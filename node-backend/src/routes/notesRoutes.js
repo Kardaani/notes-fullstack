@@ -5,7 +5,7 @@ var router = express.Router();
 //Schema
 var Notes = require('../models/Notes');
 
-// Get Specific
+//  Specific note
 router.route('/:id').get(function (req, res) {
   var id = req.params.id;
   Notes.findById(id, function (err, item){
@@ -13,7 +13,7 @@ router.route('/:id').get(function (req, res) {
   });
 });
 
-// Get All Items
+//  All Notes
 router.route('/').get(function (req, res) {
   Notes.find(function (err, items){
     if(err){
@@ -24,7 +24,7 @@ router.route('/').get(function (req, res) {
   });
 });
 
-// Add item
+// Add note
 router.route('/add').post(function (req, res) {
   var item = new Notes(req.body);
       item.save()
@@ -32,11 +32,21 @@ router.route('/add').post(function (req, res) {
     res.json('Note Added');
     })
     .catch(err => {
-    res.status(400).send("unable to save to database");
+    res.status(400).send("unable to save to Mongo database");
     });
 });
 
-//  Update Specific
+// Delete Specific note
+router.route('/delete/:id').get(function (req, res) {
+  Notes.findByIdAndRemove({_id: req.params.id},
+       function(err, item){
+        if(err) res.json(err);
+        else res.json('Note Deleted');
+    });
+});
+
+
+//  Update Specific note
 router.route('/update/:id').post(function (req, res) {
   Notes.findById(req.params.id, function(err, item) {
     if (!item)
@@ -48,19 +58,11 @@ router.route('/update/:id').post(function (req, res) {
           res.json('Note Updated');
       })
       .catch(err => {
-            res.status(400).send("unable to update the database");
+            res.status(400).send("unable to update the Mongo database");
       });
     }
   });
 });
 
-// Delete Specific
-router.route('/delete/:id').get(function (req, res) {
-  Notes.findByIdAndRemove({_id: req.params.id},
-       function(err, item){
-        if(err) res.json(err);
-        else res.json('Note Deleted');
-    });
-});
 
 module.exports = router;
