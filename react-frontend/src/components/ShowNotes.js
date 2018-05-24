@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NoteService from './NoteService';
-import axios from 'axios';
+//import axios from 'axios';
 import ViewNote from './ViewNote';
 
 export default class ShowNotes extends Component {
@@ -11,7 +11,7 @@ export default class ShowNotes extends Component {
       this.noteService = new NoteService();
 
       //bind
-
+      this.onView = this.onView.bind(this);
       this.handleIndex = this.handleIndex.bind(this);
     }
     componentWillMount(){
@@ -35,13 +35,13 @@ export default class ShowNotes extends Component {
       }
     }
 
-    onView(event) {
-      let id =this.props.match.params.id;
-      var thisRef = this;
-      this.noteService.show(id, function(data){
-        thisRef.setState(data);
-      });
-    }
+
+      onView(event) {
+        let id = event.target.id;
+        this.props.history.push('/shownote/'+id);
+      }
+
+
 
     handleIndex() {
       this.props.history.push('/');

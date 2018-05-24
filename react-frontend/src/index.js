@@ -27,7 +27,7 @@ ReactDOM.render(
       <Route path='/add' component={AddNote} />
       <Route path='/editnotes' component={EditNotes} />
       <Route path='/shownotes' component={ShowNotes} />
-      <Route path='/shownote' component={ShowNote} />
+      <Route path='/shownote/:id' component={ShowNote} />
       <Route exact path='/' component={indexNotes} />
       <Route path='/update/:id' component={UpdateNote} />
       </div>

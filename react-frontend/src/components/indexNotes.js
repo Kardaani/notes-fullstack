@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import NoteService from './NoteService';
-import {Link} from 'react-router-dom';
-import axios from 'axios';
-import OneNote from './OneNote';
+//import {Link} from 'react-router-dom';
+//import axios from 'axios';
+//import OneNote from './OneNote';
 
 export default class IndexItem extends Component {
 

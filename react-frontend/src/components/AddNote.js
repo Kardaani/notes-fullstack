@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NoteService from './NoteService';
-import axios from 'axios';
+//import axios from 'axios';
 export default class AddNote extends Component {
 
   constructor(props) {
@@ -42,8 +42,8 @@ export default class AddNote extends Component {
                 <input type="text" value={this.state.value} onChange={this.handleChange} className="form-control"/>
               </div>
               <div className="panel-footer">
-              <button type="submit" className="btn btn-primary">Add</button>
-              <button type="button" className="btn btn-default" onClick={this.handleCancel}>Cancel</button>
+              <button type="submit" className="btn btn-primary">Add Note</button>
+              <button type="button" className="btn btn-default" onClick={this.handleCancel}>Back to Index</button>
               </div>
             </div>
           </form>

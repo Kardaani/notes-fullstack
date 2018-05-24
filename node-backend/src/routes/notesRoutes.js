@@ -29,7 +29,7 @@ router.route('/add').post(function (req, res) {
   var item = new Notes(req.body);
       item.save()
     .then(item => {
-    res.json('Added');
+    res.json('Note Added');
     })
     .catch(err => {
     res.status(400).send("unable to save to database");
@@ -45,7 +45,7 @@ router.route('/update/:id').post(function (req, res) {
       item.desc = req.body.desc;
 
       item.save().then(item => {
-          res.json('Updated');
+          res.json('Note Updated');
       })
       .catch(err => {
             res.status(400).send("unable to update the database");
@@ -59,7 +59,7 @@ router.route('/delete/:id').get(function (req, res) {
   Notes.findByIdAndRemove({_id: req.params.id},
        function(err, item){
         if(err) res.json(err);
-        else res.json('Deleted');
+        else res.json('Note Deleted');
     });
 });
 

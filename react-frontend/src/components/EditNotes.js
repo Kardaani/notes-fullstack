@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NoteService from './NoteService';
-import axios from 'axios';
+//import axios from 'axios';
 import DeleteNote from './DeleteNote';
 
 export default class EditNotes extends Component {
@@ -64,7 +64,7 @@ export default class EditNotes extends Component {
           <div className="panel panel-default">
             <div className="panel-heading">List of Notes</div>
             <div className="panel-body">
-            <p>Click on the note description to edit</p>
+            <p>Click on the note description to edit!</p>
               <table id="note-list" className="table table-bordered">
                 <tbody>
                   {this.tabRow()}
