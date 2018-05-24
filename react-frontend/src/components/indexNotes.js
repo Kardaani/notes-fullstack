@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import NoteService from './NoteService';
-//import {Link} from 'react-router-dom';
-//import axios from 'axios';
-//import OneNote from './OneNote';
+
 
 export default class IndexItem extends Component {
 
@@ -41,7 +39,7 @@ handleShow() {
           <div className="panel panel-default">
             <div className="panel-heading">List of Notes Application</div>
             <div className="panel-body">
-            <p>This is an application for making Notes</p>
+            <p>This is an application for making Notes.</p>
             <p>Click here to show valid list of Notes! You can edit or add notes from there!</p>
 
             <button onClick={this.handleEdit} className="btn btn-info">Edit Notes</button>

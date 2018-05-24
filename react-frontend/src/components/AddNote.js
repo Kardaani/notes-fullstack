@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NoteService from './NoteService';
-//import axios from 'axios';
+
 export default class AddNote extends Component {
 
   constructor(props) {
@@ -17,7 +17,7 @@ export default class AddNote extends Component {
     handleSubmit(event) {
       event.preventDefault();
       this.noteService.add(this.state.value,()=>{
-        this.props.history.push('/');
+        this.props.history.push('/editnotes');
       });
     }
 

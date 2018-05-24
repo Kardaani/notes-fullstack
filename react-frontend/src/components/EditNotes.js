@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NoteService from './NoteService';
-//import axios from 'axios';
+
 import DeleteNote from './DeleteNote';
 
 export default class EditNotes extends Component {
@@ -51,7 +51,7 @@ export default class EditNotes extends Component {
     }
 
     handleAdd() {
-      this.props.history.push('/add');
+      this.props.history.push('/addnote');
 
     }
     handleIndex() {
@@ -72,7 +72,9 @@ export default class EditNotes extends Component {
               </table>
             </div>
             <div className="panel-footer">
+            <p>Add a new Note from here!</p>
               <button onClick={this.handleAdd} className="btn btn-info">New note</button>
+              <p>Back to IndexRoot from here!</p>
               <button onClick={this.handleIndex} className="btn btn-info">Back to Index</button>
             </div>
           </div>

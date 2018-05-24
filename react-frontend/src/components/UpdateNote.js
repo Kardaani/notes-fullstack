@@ -46,7 +46,7 @@ export default class UpdateNote extends Component {
       this.state.desc,
       this.state._id,
       function() {
-        thisRef.props.history.push('/');
+        thisRef.props.history.push('/editnotes');
       }
     );
   }
@@ -69,7 +69,7 @@ export default class UpdateNote extends Component {
             </div>
             <div className="panel-footer">
             <button type="submit" className="btn btn-primary">Update</button>
-            <button type="button" className="btn btn-default" onClick={this.handleCancel}>Cancel</button>
+            <button type="button" className="btn btn-default" onClick={this.handleCancel}>Back to Index</button>
             </div>
           </div>
         </form>

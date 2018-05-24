@@ -9,7 +9,7 @@ export const Header = (props) => {
               <span className="sr-only">Toggle navigation</span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">ReactJS Notes List</a>
+            <a className="navbar-brand" href="">Full Stack Notes List: Backend Node, Frontend React, DB Mongo</a>
           </div>
         </div>
       </nav>
