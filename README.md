@@ -1,4 +1,4 @@
-# notes-reactjs
+# notes-reactjs / notes-fullstack
 
 Node & MongoDB Backend , React frontend.
 
