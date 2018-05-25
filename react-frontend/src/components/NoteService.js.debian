@@ -3,7 +3,7 @@ import axios from 'axios';
 export default class NoteService {
 
   get(id,callback) {
-    axios.get('http://localhost:90/notes/'+id)
+    axios.get('http://127.0.0.1:90/notes/'+id)
     .then((response) => {
       callback(response.data);
     })
@@ -17,7 +17,7 @@ export default class NoteService {
 
 
   all(callback) {
-    axios.get('http://localhost:90/notes')
+    axios.get('http://127.0.0.1:90/notes')
     .then((response) => {
       callback(response.data);
     })
@@ -30,7 +30,7 @@ export default class NoteService {
 
 
   add(data,callback) {
-    axios.post('http://localhost:90/notes/add/', {
+    axios.post('http://127.0.0.1:90/notes/add/', {
     desc: data
     })
     .then(function (response) {
@@ -44,7 +44,7 @@ export default class NoteService {
   }
 
   update(data, id, callback){
-    axios.post('http://localhost:90/notes/update/'+id, {
+    axios.post('http://127.0.0.1:90/notes/update/'+id, {
       desc: data
     })
     .then(function(response) {
@@ -57,7 +57,7 @@ export default class NoteService {
   }
 
   delete(id, callback){
-    axios.get('http://localhost:90/notes/delete/'+id)
+    axios.get('http://127.0.0.1:90/notes/delete/'+id)
     .then(function(response){
       callback();
     })
